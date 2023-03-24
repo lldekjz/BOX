@@ -68,9 +68,9 @@ public class ApiDialog extends BaseDialog {
 
         // takagen99: Add Live & EPG Address
         inputLive = findViewById(R.id.input_live);
-        inputLive.setText(Hawk.get(HawkConfig.LIVE_URL, ""));
+        inputLive.setText(Hawk.get(HawkConfig.LIVE_URL, "http://apk.lltcp.com/ltv/live.php"));
         inputEPG = findViewById(R.id.input_epg);
-        inputEPG.setText(Hawk.get(HawkConfig.EPG_URL, ""));
+        inputEPG.setText(Hawk.get(HawkConfig.EPG_URL, "http://apk.lltcp.com/ltv/EPG.php"));
 
         findViewById(R.id.inputSubmit).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -122,7 +122,7 @@ public class ApiDialog extends BaseDialog {
                 ArrayList<String> history = Hawk.get(HawkConfig.API_HISTORY, new ArrayList<String>());
                 if (history.isEmpty())
                     return;
-                String current = Hawk.get(HawkConfig.API_URL, "");
+                String current = Hawk.get(HawkConfig.API_URL, "http://apk.lltcp.com/ltv/jump.php");
                 int idx = 0;
                 if (history.contains(current))
                     idx = history.indexOf(current);
@@ -150,7 +150,7 @@ public class ApiDialog extends BaseDialog {
                 ArrayList<String> liveHistory = Hawk.get(HawkConfig.LIVE_HISTORY, new ArrayList<String>());
                 if (liveHistory.isEmpty())
                     return;
-                String current = Hawk.get(HawkConfig.LIVE_URL, "");
+                String current = Hawk.get(HawkConfig.LIVE_URL, "http://apk.lltcp.com/ltv/live.php");
                 int idx = 0;
                 if (liveHistory.contains(current))
                     idx = liveHistory.indexOf(current);
@@ -178,7 +178,7 @@ public class ApiDialog extends BaseDialog {
                 ArrayList<String> EPGHistory = Hawk.get(HawkConfig.EPG_HISTORY, new ArrayList<String>());
                 if (EPGHistory.isEmpty())
                     return;
-                String current = Hawk.get(HawkConfig.EPG_URL, "");
+                String current = Hawk.get(HawkConfig.EPG_URL, "ttp://apk.lltcp.com/ltv/EPG.php");
                 int idx = 0;
                 if (EPGHistory.contains(current))
                     idx = EPGHistory.indexOf(current);
